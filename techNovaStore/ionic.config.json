@@ -1,0 +1,7 @@
+{
+  "name": "techNovaStore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
