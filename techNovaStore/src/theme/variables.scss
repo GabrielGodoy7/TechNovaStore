@@ -3,8 +3,8 @@
 
 /** Ionic CSS Variables **/
 :root {
-  --ion-background-color: #003366;
-  --ion-background: rgb(0, 51, 102);
+  --ion-background-color: #333333;
+  --ion-background-color: rgb(51, 51, 51);
 
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -78,7 +78,7 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-  /**prata **/
+  /**prata**/
   --ion-color-prata: #C0C0C0;
 	--ion-color-prata-rgb: 192,192,192;
 	--ion-color-prata-contrast: #000000;
@@ -101,6 +101,23 @@
 	--ion-color-azulescuro-contrast-rgb: 255,255,255;
 	--ion-color-azulescuro-shade: #002d5a;
 	--ion-color-azulescuro-tint: #1a4775;
+
+  /**cinzaEscuro**/
+  --ion-color-cinzaescuro: #333333;
+	--ion-color-cinzaescuro-rgb: 51,51,51;
+	--ion-color-cinzaescuro-contrast: #ffffff;
+	--ion-color-cinzaescuro-contrast-rgb: 255,255,255;
+	--ion-color-cinzaescuro-shade: #2d2d2d;
+	--ion-color-cinzaescuro-tint: #474747;
+}
+
+.ion-color-cinzaescuro {
+	--ion-color-base: var(--ion-color-cinzaescuro);
+	--ion-color-base-rgb: var(--ion-color-cinzaescuro-rgb);
+	--ion-color-contrast: var(--ion-color-cinzaescuro-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-cinzaescuro-contrast-rgb);
+	--ion-color-shade: var(--ion-color-cinzaescuro-shade);
+	--ion-color-tint: var(--ion-color-cinzaescuro-tint);
 }
 
 .ion-color-prata {

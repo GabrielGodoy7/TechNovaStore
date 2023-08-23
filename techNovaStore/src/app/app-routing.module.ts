@@ -18,7 +18,15 @@ const routes: Routes = [
   {
     path: 'domesticos',
     loadChildren: () => import('./domesticos/domesticos.module').then( m => m.DomesticosPageModule)
+  },  {
+    path: 'smartphones',
+    loadChildren: () => import('./smartphones/smartphones.module').then( m => m.SmartphonesPageModule)
   },
+  {
+    path: 'componentes',
+    loadChildren: () => import('./componentes/componentes.module').then( m => m.ComponentesPageModule)
+  },
+
 ];
 
 @NgModule({
