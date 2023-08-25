@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'componentes',
     loadChildren: () => import('./componentes/componentes.module').then( m => m.ComponentesPageModule)
   },
+  {
+    path: 'promocoes',
+    loadChildren: () => import('./promocoes/promocoes.module').then( m => m.PromocoesPageModule)
+  },
+  {
+    path: 'carrinho',
+    loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
+  },
 
 ];
 

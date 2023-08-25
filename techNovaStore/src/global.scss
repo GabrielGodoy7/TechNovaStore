@@ -32,7 +32,7 @@ ion-header {
   ion-toolbar{
     --backgrund: var(--ion-color-dark);
 
-    ion-back-button {
+    ion-back-button, ion-button {
       color: var(--ion-color-warning)
 
     }
