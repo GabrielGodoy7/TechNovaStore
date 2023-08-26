@@ -1,75 +1,38 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar color="dark" class="ion-small-padding">
     <ion-buttons slot="start">
       <ion-back-button color="limao">Button</ion-back-button>
     </ion-buttons>
     <ion-title color="limao">Componentes</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="prata">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
+  <ion-searchbar animated="true" placeholder="Animated" color="dark"></ion-searchbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen="true">
 
-  <ion-list>
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/rtx_4090.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Nvidia RTX 4090</h2>
-        <p>Nvidia</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 1.490,50</ion-badge>
+  <ion-item lines="full" *ngFor="let produto of listaProdutos">
+    <ion-thumbnail slot="start">
+      <img [src]="produto.foto" />
+    </ion-thumbnail>
 
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+    <ion-label color="dark">
+      <h2 class="custom-title">{{ produto.nome | uppercase }}</h2>
+      <p>{{ produto.descricao }}</p>
+    </ion-label>
 
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/CINEMA_610.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>JBL Home Theater Cinema 610</h2>
-        <p>Bluetooth 5.0 - Preto</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 2.275,00</ion-badge>
+    <ion-badge color="dark">R$ {{ produto.preco | number: '1.2-2' }}</ion-badge>
 
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+    <ion-button expand="block" slot="end" color="dark" (click)="addProdutoCarrinho(produto)">
+      <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+    </ion-button>
 
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/tv.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>TV 50' TLC</h2>
-        <p>50 Polegadas 4K - Prata</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 3.376,90</ion-badge>
-
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/echo-dot-com-relogio-4a-geracao-smart-speaker-com-relogio-e-alexa_1_1200.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Alexa - Echo Dot Com Relógio</h2>
-        <p>4ª Geração - Branca</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 1.233,70</ion-badge>
-
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-
+  </ion-item>
 </ion-content>
-

@@ -1,8 +1,17 @@
 <ion-header>
   <ion-toolbar color="dark">
+
     <ion-title color= "limao">
       TechNova Store
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="prata">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -68,3 +77,8 @@
 
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar >
+    <ion-button expand="full" routerLink="/carrinho" color="dark">Ver Carrinho</ion-button>
+  </ion-toolbar>
+</ion-footer>

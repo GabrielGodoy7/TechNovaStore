@@ -1,13 +1,20 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>carrinho</ion-title>
+  <ion-toolbar color="dark" class="ion-small-padding">
+
+    <ion-buttons slot="start">
+      <ion-back-button color="limao">Button</ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="limao">Carrinho</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="prata">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">carrinho</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+

@@ -42,8 +42,16 @@ export class BdtempService {
     this.totalCarrinho();
   }
 
-  
-  
+  removeProdutoCarrinho(posicao: number) {
+    this.bd['carrinho'].splice(posicao, 1);
+    this.totalCarrinho();
+  }
+
+  limparCarrinho() {
+    this.bd['carrinho'] = [];
+    this.totalCarrinho();
+  }
+
   totalCarrinho() {
     let total = 0;
 
@@ -54,6 +62,6 @@ export class BdtempService {
     }
     this.salvar('qtdeItensCarrinho', this.bd['carrinho'].length);
     this.salvar('totalCarrinho', total);
-    console.log(this.bd)
+    //console.log(this.bd)
   }
 }

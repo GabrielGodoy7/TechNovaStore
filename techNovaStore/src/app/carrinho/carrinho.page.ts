@@ -7,8 +7,9 @@ import { BdtempService } from '../services/bdtemp.service';
   styleUrls: ['./carrinho.page.scss'],
 })
 export class CarrinhoPage implements OnInit {
+  qtdeItensCarrinho = 0;
 
-  listaItens =[];
+  listaItens = [];
 
   constructor(public bdtemp: BdtempService) { }
 

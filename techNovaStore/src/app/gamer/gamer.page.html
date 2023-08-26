@@ -1,59 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark" class="ion-small-padding">
+
     <ion-buttons slot="start">
       <ion-back-button color="limao">Button</ion-back-button>
     </ion-buttons>
+
     <ion-title color="limao">Gaming Gear</ion-title>
+
+
+    <ion-buttons slot="end" routerLink="/carrinho">
+      <ion-button color="prata">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen="true">
 
-  <ion-list>
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/Xbox-Series-X-1-TB-8K-HDR-2.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Joystick Xbox Series S</h2>
-        <p>37cm - Preto</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 290,00</ion-badge>
+  <ion-item lines="full" *ngFor="let produto of listaProdutos">
+    <ion-thumbnail slot="start">
+      <img [src]="produto.foto" />
+    </ion-thumbnail>
 
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+    <ion-label color="dark">
+      <h2 class="custom-title">{{ produto.nome | uppercase }}</h2>
+      <p>{{ produto.descricao }}</p>
+    </ion-label>
 
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/controleps5.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Joystick PlayStation DualSense</h2>
-        <p>40cm - Branco</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 275,00</ion-badge>
+    <ion-badge color="dark">R$ {{ produto.preco | number: '1.2-2' }}</ion-badge>
 
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+    <ion-button expand="block" slot="end" color="dark" (click)="addProdutoCarrinho(produto)">
+      <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+    </ion-button>
 
-    <ion-item color="dark" class="ion-small-padding">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/img/redragon-k576r-daska-04.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Teclado RedRagon Daksa</h2>
-        <p>44cm - Teclado Mecânico Com Switch Blue</p>
-      </ion-label>
-      <ion-badge color="dark">R$ 376,90</ion-badge>
-
-      <ion-button expand="block" slot="end">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-
+  </ion-item>
 </ion-content>
