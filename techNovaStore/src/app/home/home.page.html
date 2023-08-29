@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="roxoclaro">
 
-    <ion-title color= "limao">
+    <ion-title>
       TechNova Store
     </ion-title>
 
     <ion-buttons slot="end">
-      <ion-button color="prata">
+      <ion-button color="roxolilas" routerLink="/carrinho">
         <ion-icon name="cart-outline"></ion-icon>
-        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+        <ion-badge color="limao">{{ qtdeItensCarrinho }}</ion-badge>
       </ion-button>
     </ion-buttons>
 
@@ -18,67 +18,54 @@
 <ion-content [fullscreen]="true">
 
   <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card color="dark" class="ion-text-center"  routerLink="/promocoes">
-            <img
-            src="../../assets/img/promo.gif"
-            alt="">
-            <ion-item lines="none" color="dark">
-              <ion-label class="titulo promocao">Confira Nossas Promoção</ion-label>
-            </ion-item>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="roxomedio" class="ion-text-center" routerLink="/promocoes">
+          <img src="../../assets/img/promo.gif" alt="">
+          <ion-item lines="none" color="roxomedio">
+            <ion-label class="titulo promocao">Confira Nossas Promoção</ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col>
-          <ion-card color="dark" routerLink="/gamer">
-            <img
-            src="../../assets/img/Produtos.png"
-            alt="">
-            <ion-item lines="full" color="dark">
-              Gaming Gear
-            </ion-item>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card color="dark" routerLink="/domesticos">
-            <img
-            src="../../assets/img/smart.png"
-            alt="">
-            <ion-item lines="full" color="dark">
-              Eletronicos Domésticos
-            </ion-item>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card color="dark" routerLink="/smartphones">
-            <img
-            src="../../assets/img/smartphones.png"
-            alt="">
-            <ion-item lines="full" color="dark">
-              Smartphones
-            </ion-item>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card color="dark" routerLink="/componentes">
-            <img
-            src="../../assets/img/produtos 4.png"
-            alt="">
-            <ion-item lines="full" color="dark">
-              Componentes
-            </ion-item>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card color="roxomedio" routerLink="/gamer">
+          <img src="../../assets/img/Produtos.png" alt="">
+          <ion-item lines="full" color="roxomedio">
+            Gaming Gear
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card color="roxomedio" routerLink="/domesticos">
+          <img src="../../assets/img/smart.png" alt="">
+          <ion-item lines="full" color="roxomedio">
+            Eletronicos Domésticos
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card color="roxomedio" routerLink="/smartphones">
+          <img src="../../assets/img/smartphones.png" alt="">
+          <ion-item lines="full" color="roxomedio">
+            Smartphones
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card color="roxomedio" routerLink="/componentes">
+          <img src="../../assets/img/produtos 4.png" alt="">
+          <ion-item lines="full" color="roxomedio">
+            Componentes
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar >
-    <ion-button expand="full" routerLink="/carrinho" color="dark">Ver Carrinho</ion-button>
-  </ion-toolbar>
-</ion-footer>
