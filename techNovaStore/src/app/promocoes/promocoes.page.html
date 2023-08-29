@@ -1,38 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="dark" class="ion-small-padding">
-    <ion-buttons slot="start">
-      <ion-back-button color="limao">Button</ion-back-button>
-    </ion-buttons>
-    <ion-title color="limao">Promoções</ion-title>
+<ion-header>
+  <ion-toolbar color="roxoclaro">
 
-    <ion-buttons slot="end">
-      <ion-button color="prata">
+    <ion-buttons slot="start">
+      <ion-back-button color="roxolilas"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Promoções</ion-title>
+
+    <ion-buttons slot="end" routerLink="/carrinho">
+      <ion-button color="roxolilas">
         <ion-icon name="cart-outline"></ion-icon>
-        <ion-badge color="limao">{{qtdeItensCarrinho}}</ion-badge>
+        <ion-badge color="roxolilas">{{qtdeItensCarrinho}}</ion-badge>
       </ion-button>
-    </ion-buttons>  
+    </ion-buttons>
 
   </ion-toolbar>
-  <ion-searchbar animated="true" placeholder="Animated" color="dark"></ion-searchbar>
 </ion-header>
 
 <ion-content fullscreen="true">
 
-  <ion-item lines="full" *ngFor="let produto of listaProdutos">
-    <ion-thumbnail slot="start">
-      <img [src]="produto.foto" />
-    </ion-thumbnail>
+  <ion-list>
+    <ion-item lines="full" *ngFor="let produto of listaProdutos" color="roxomedio">
 
-    <ion-label color="dark">
-      <h2 class="custom-title">{{ produto.nome | uppercase }}</h2>
-      <p>{{ produto.descricao }}</p>
-    </ion-label>
-
-    <ion-badge color="dark">R$ {{ produto.preco | number: '1.2-2' }}</ion-badge>
-
-    <ion-button expand="block" slot="end" color="dark" (click)="addProdutoCarrinho(produto)">
-      <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-    </ion-button>
-
-  </ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="produto.foto" />
+      </ion-thumbnail>
+    
+      <ion-label>
+        <h2 class="custom-title">{{ produto.nome | uppercase }}</h2>
+        <p>{{ produto.descricao }}</p>
+      </ion-label>
+    
+      <ion-badge color="roxoescuro">R$ {{ produto.preco | number: '1.2-2' }}</ion-badge>
+    
+      <ion-button expand="block" slot="end" color="roxolilas" (click)="addProdutoCarrinho(produto)">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    
+    </ion-item>
+  </ion-list>
 </ion-content>

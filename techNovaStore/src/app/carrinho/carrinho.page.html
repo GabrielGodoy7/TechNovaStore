@@ -13,21 +13,19 @@
 <ion-content [fullscreen]="true" class="ion-color-roxoclaro-background">
 
   <ion-list *ngIf="listaProdutos.length > 0; else emptyState">
-    <ion-card color="roxoclaro">
-      <ion-item *ngFor="let produto of listaProdutos; let i = index">
+      <ion-item *ngFor="let produto of listaProdutos; let i = index" color="roxomedio">
 
         <ion-thumbnail slot="start">
           <img [src]="produto.foto" alt="Imagem do Produto">
         </ion-thumbnail>
 
-        <ion-label color="roxolilas">
+        <ion-label>
           <h2>{{ produto.nome }}</h2>
           <p>{{ produto.descricao }}</p>
-          <p>Preço: R$ {{ produto.preco | number: '1.2-2' }}</p>
+          <p color="roxolilas">Preço: R$ {{ produto.preco | number: '1.2-2' }}</p>
           <ion-button color="roxoclaro" (click)="removerItem(i)">Remover</ion-button>
         </ion-label>
       </ion-item>
-    </ion-card>
   </ion-list>
 
   <ng-template #emptyState>
@@ -36,7 +34,7 @@
     </ion-text>
   </ng-template>
 
-  <ion-item-divider color="roxomedio">
+  <ion-item-divider color="roxoescuro">
     <ion-label>Total:</ion-label>
     <ion-label>R$ {{ total | number: '1.2-2' }}</ion-label>
   </ion-item-divider>
